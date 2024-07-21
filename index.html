@@ -8,21 +8,18 @@
     <script defer src="snake.js"></script>
 </head>
 <body>
-    <section class="board"></section>
-    <div id="sun"></div>
-    <h1 id="gameName">The Ultimate Snake</h1>
-    <div id="scoreBox">
-        <span>Score: <span id="score">0</span></span>
-        <span>High Score: <span id="highScore">0</span></span>
+    <div class="gameBoard">
+    <div class="information">
+        <span class="score">Score: 0</span>
+        <span class="highScore">High Score: 0</span>
     </div>
-    <div id="gameArea">
-        </div>
-    <div id="food">
-        </div>
-    <div id="snake">
+    <div class="gameArea"></div>
+    <div class="arrowKeys">
+        <i data-key="ArrowUp" class="up"></i>
+        <i data-key="ArrowDown" class="down"></i>
+        <i data-key="ArrowLeft" class="left"></i>
+        <i data-key="ArrowRight" class="right"></i>
+      </div>
     </div>
-    <div id="menu">
-        <button type="button" id="button">Menu</button>
-    </div>
-</body>
+    </body>
 </html>
