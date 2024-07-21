@@ -1,48 +1,62 @@
-body {
-    display: flex;
-    justify-content: center;
-    background: skyblue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-.gameBoard {
-    width: 80vmin;
-    height: 80vmin;
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
-    background: greenyellow;
+    background: skyblue;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.gameBoard {
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    background: darkgreen;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 .information {
     display: flex;
-    color: chocolate;
+    color: rgb(228, 220, 215);
+    font-weight: 500;
     font-size: 1.2rem;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px 27px;
 }
 .gameArea {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    background: greenyellow;
 }
 .gameArea .food {
     background: red;
 }
 .gameArea .snake {
-    background: rgb(57, 6, 158);
+    background: darkgreen;
 }
-/* .arrowKeys i {
-    padding: 20px;
+.arrowKeys {
+    display: none;
+    justify-content: space-between;
+}
+.arrowKeys i {
+    padding: 25px 0;
     text-align: center;
     font-size: 1.3rem;
     color: white;
     width: calc(100%/4);
     cursor: pointer;
     border-right: 1px solid black;
-} */
+}
 @media screen and (max-width: 800px) {
     .gameBoard {
         width: 90vmin;
@@ -59,9 +73,9 @@ body {
         font-size: 10px;
     }
 }
-#sun {
+.sun {
     position: relative;
-    left: 500px;
+    left: 300px;
     top: 0px;
     width: 150px;
     height: 150px;
