@@ -27,9 +27,9 @@ body {
     display: flex;
     color: rgb(228, 220, 215);
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 20 px;
     justify-content: space-between;
-    padding: 20px 27px;
+    padding: 20px 25px;
 }
 .gameArea {
     height: 100%;
@@ -37,12 +37,16 @@ body {
     display: grid;
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
     background: greenyellow;
+    border-style: solid;
+    
 }
 .gameArea .food {
     background: red;
+    border-radius: 50%;
 }
 .gameArea .snake {
     background: darkgreen;
+    border-radius: 20%;
 }
 .arrowKeys {
     display: none;
@@ -51,7 +55,6 @@ body {
 .arrowKeys i {
     padding: 25px 0;
     text-align: center;
-    font-size: 1.3rem;
     color: white;
     width: calc(100%/4);
     cursor: pointer;
@@ -66,7 +69,7 @@ body {
         font-size: 15px;
     }
     .arrowKeys {
-        display.flex;
+        display: flex;
     }
     .arrowKeys i {
         padding: 10px;
@@ -79,7 +82,7 @@ body {
     top: 0px;
     width: 150px;
     height: 150px;
-    background: yellow;
+    background: rgb(255, 200, 0);
     border-radius: 50%;
     animation: shine 4s ease-in-out infinite;
 

@@ -154,7 +154,7 @@ function init() {
 
     // Check whether it bite itself
     for (let i = 1; i < snakeBody.length; i++) { //ignore head: start i = 1
-        if (snakePosition.x === snakeBody.[i][0] && snakePosition.y === snakeBody.[i][1]) {
+        if (snakePosition.x === snakeBody[i][0] && snakePosition.y === snakeBody[i][1]) {
     // for all body segment, if snake head's x and y = body segment x and y
     // since 
     // snakebody[i][0] = find x coordinate of segment i  
