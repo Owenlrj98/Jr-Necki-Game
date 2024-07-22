@@ -115,43 +115,57 @@ function init() {
     if (gameEnd === true) {
         return gameOver();
     }
-    // Move snake
-    snakePosition.x += xMS;
-    snakePosition.y += yMS;
+    // move snake
+    snakePosition.x += xMS; // move snake by by x coordinate
+    snakePosition.y += yMS; // move snake by y cooridnate
 
-    // Check if the snake has eaten the food
+    // Check if snake eat the food
     if (snakePosition.x === foodPosition.x && snakePosition.y === foodPosition.y) {
         createFood();
-        snakeBody.push([foodPosition.x, foodPosition.y]);
+        // random food x and y
         score += 10;
+        // if snake eats = + 10 points
+        snakeBody.push([foodPosition.x, foodPosition.y]);
+        // add new body into snakebody array wtih the coordintes of where food is eaten
         highScore = Math.max(score, highScore);
+        // return the greater score
         localStorage.setItem("highScore", highScore);
+        // set highScore: as the above score whichever is greater
         scoreEl.innerText = `Score: ${score}`;
         highScoreEl.innerText = `High Score: ${highScore}`;
+        // update score
     }
 
     // Move the snake's body
-    for (let i = snakeBody.length - 1; i > 0; i--) {
-        snakeBody[i] = snakeBody[i - 1];
-    }
+    for (let i = snakeBody.length - 1 ; i > 0; i--)  {// loops from back of snakeBody
+        snakeBody[i] = snakeBody[i - 1]; 
+        // each segment = i, shifts them in direction 
+        // tried i + 1 too, but the snake stops when eating first food
+        // dont count head: length-1
+    } 
     snakeBody[0] = [snakePosition.x, snakePosition.y];
+    //make it so that each element in snake body has x and y
 
-    // Check for collisions with walls
+    // Check if hit wall
     if (snakePosition.x <= 0 || snakePosition.x > 20 || snakePosition.y <= 0 || snakePosition.y > 20) {
         gameEnd = true;
     }
+    // returns game end when snake's x or y goes beyond boundary (which is 20 x 20 grid)
 
-    // Check for collisions with itself
-    for (let i = 1; i < snakeBody.length; i++) {
-        if (snakePosition.x === snakeBody[i][0] && snakePosition.y === snakeBody[i][1]) {
-            gameEnd = true;
+    // Check whether it bite itself
+    for (let i = 1; i < snakeBody.length; i++) { //ignore head: start i = 1
+        if (snakePosition.x === snakeBody.[i][0] && snakePosition.y === snakeBody.[i][1]) {
+    // for all body segment, if snake head's x and y = body segment x and y
+    // since 
+    // snakebody[i][0] = find x coordinate of segment i  
+    // snakebody[i][1] = find y coordinate of segement i   
+    // refer back 147
+    gameEnd = true;
         }
     }
-
     // Render the game
     renderGame();
 }
-
 // /*----------------------------- Event Listeners -----------------------------*/
 document.addEventListener("keydown", changeDirection); // Listen for keydown events for direction changes
 arrowKeysEl.forEach(button => button.addEventListener("click", (event) => changeDirection(event)));
@@ -159,3 +173,13 @@ arrowKeysEl.forEach(button => button.addEventListener("click", (event) => change
 // Start Game
 createFood();
 gameTime = setInterval(init, 100); // Set the game update interval
+
+
+// current issues: 
+// food might appear on snake body
+// snake teleports sometimes
+// change the alert style
+// add comments to all - easy to get lost again with code
+// sometimes snake stop beside food
+// sometimes the snake die before hitting border
+// console.log querySelectors suddenly not working
