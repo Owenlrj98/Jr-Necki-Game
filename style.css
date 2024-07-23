@@ -13,7 +13,7 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     align-items: center;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .gameBoard {
@@ -25,6 +25,7 @@ body {
     border-radius: 5px;
     background: darkgreen;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 .information {
     display: flex;
@@ -46,6 +47,7 @@ body {
 .gameArea .food {
     background: red;
     border-radius: 50%;
+
 }
 .gameArea .snake {
     background: darkgreen;
@@ -105,6 +107,7 @@ body {
                     0 0 250px yellow;
     }
 }
+
 .menuButton {
     width: 100px;
     height: 40px;
@@ -122,11 +125,12 @@ body {
 }
 
 .popup {
-    width: 500px;
+    width: 400px;
     background: orange;
     border-radius: 5px;
     position: absolute;
     top 0;
+    left: 50%;
     transform: translate(-50%, 50%) scale(0.1);
     text-align: center;
     padding: 10 10px 10px;

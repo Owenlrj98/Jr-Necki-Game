@@ -78,8 +78,7 @@ function initialSnake() {
 function createFood() {
     foodPosition.x = Math.floor(Math.random() * 20) + 1;
     foodPosition.y = Math.floor(Math.random() * 20) + 1;
-}
-
+};
 // Game Over
 function gameOver() {
     clearInterval(gameTime);
@@ -185,12 +184,12 @@ function closePopup() {
 }
 
 // Dialog
-const dialog = document.querySelector("dialog");
-const showButton = document.querySelector("dialog + button");
-const closeButton = document.querySelectory("dialog button");
-showButton.addEventListener("click", () => {
-    dialog.showModal();
-});
+// const dialog = document.querySelector("dialog");
+// const showButton = document.querySelector("dialog + button");
+// const closeButton = document.querySelector("dialog button");
+// showButton.addEventListener("click", () => {
+//     dialog.showModal();
+// });
 
 // Start Game
 createFood();
@@ -205,4 +204,3 @@ gameTime = setInterval(init, 100); // Set the game update interval
 // sometimes snake stop beside food
 // sometimes the snake die before hitting border
 // console.log querySelectors suddenly not working
-
