@@ -10,10 +10,13 @@ const scoreEl = document.querySelector('.score');
 console.log(scoreEl);
 const highScoreEl = document.querySelector('.highScore');
 console.log(highScoreEl);
+const menuEl = document.querySelector('.menu');
+console.log(menuEl);
 // Important note to have querySelectors at the start of code -> affects the code
 /*---------------------------- Variables (state) ----------------------------*/
 let gameEnd = false;
 // will be turned to true when there is collision in the future
+let pause = false;
 let score = 0;
 // current score 
 let highScore = localStorage.getItem("highScore") || 0; 
@@ -80,9 +83,10 @@ function createFood() {
 // Game Over
 function gameOver() {
     clearInterval(gameTime);
-    alert("You died!");
+    alert("You died!"); // use dialogue
     location.reload(); // Reload the page
 }
+
 
 // Change Direction
 function changeDirection(event) {
@@ -126,6 +130,7 @@ function init() {
         score += 10;
         // if snake eats = + 10 points
         snakeBody.push([foodPosition.x, foodPosition.y]);
+        // console.log(snakeBody);
         // add new body into snakebody array wtih the coordintes of where food is eaten
         highScore = Math.max(score, highScore);
         // return the greater score
@@ -137,7 +142,7 @@ function init() {
     }
 
     // Move the snake's body
-    for (let i = snakeBody.length - 1 ; i > 0; i--)  {// loops from back of snakeBody
+    for (let i = snakeBody.length - 1; i > 0; i--)  {// loops from back of snakeBody
         snakeBody[i] = snakeBody[i - 1]; 
         // each segment = i, shifts them in direction 
         // tried i + 1 too, but the snake stops when eating first food
@@ -169,6 +174,23 @@ function init() {
 // /*----------------------------- Event Listeners -----------------------------*/
 document.addEventListener("keydown", changeDirection); // Listen for keydown events for direction changes
 arrowKeysEl.forEach(button => button.addEventListener("click", (event) => changeDirection(event)));
+// Styling
+// Create game menu 
+let popup = document.getElementById("popup");
+function openPopup() {
+    popup.classList.add("open-popup");
+}
+function closePopup() {
+    popup.classList.remove("open-popup")
+}
+
+// Dialog
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelectory("dialog button");
+showButton.addEventListener("click", () => {
+    dialog.showModal();
+});
 
 // Start Game
 createFood();
@@ -183,3 +205,4 @@ gameTime = setInterval(init, 100); // Set the game update interval
 // sometimes snake stop beside food
 // sometimes the snake die before hitting border
 // console.log querySelectors suddenly not working
+

@@ -23,5 +23,25 @@
         <i data-key="ArrowRight" class="right"></i>
       </div>
     </div>
+    <div id="menu">
+
+        <button type="submit" class="menuButton" onclick="openPopup()">Game Menu</button>
+        <div class="popup" id="popup">
+        <img src="tick.png">
+        <h2>Game Info</h2>
+        <p>Rules:</p>
+        <p>1. Use arrow keys to control</p>
+        <p>2. Eat food to increase score</p>
+        <p>3. Do not touch the walls</p>
+        <p>4. Do not eat yourself</p>
+        <button type="button" class="closeButton" onclick="closePopup()">EXIT</button>
+        </div>
+    </div>
+    <dialog>
+        <p>Game OVER</p>
+        <button autofocus>Restart</button>   
+    </dialog>
+    <button>Show the dialog</button>
+
     </body>
 </html>

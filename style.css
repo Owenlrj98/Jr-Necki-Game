@@ -7,21 +7,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: skyblue;
+    background: green;
+    background-image: linear-gradient(skyblue, skyblue);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
     min-height: 100vh;
     align-items: center;
+    /* overflow: hidden; */
 }
 
 .gameBoard {
-    width: 70vmin;
-    height: 70vmin;
+    width: 75vmin;
+    height: 75vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 5px;
     background: darkgreen;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
 }
 .information {
     display: flex;
@@ -76,6 +79,14 @@ body {
         font-size: 10px;
     }
 }
+.menu {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    background: rgb(255, 119, 0);
+    border-radius: 20%;
+    box-shadow: 0 20px 20px rgba(255, 0, 0, 0.2);
+}
 .sun {
     position: relative;
     left: 300px;
@@ -93,4 +104,57 @@ body {
                     0 0 60px yellow,
                     0 0 250px yellow;
     }
+}
+.menuButton {
+    width: 100px;
+    height: 40px;
+    background: orange;
+    border-radius: 20%;
+    font-weight: 500;
+    font-size: 15px;
+
+}
+.closeButton {
+    background: red;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.popup {
+    width: 500px;
+    background: orange;
+    border-radius: 5px;
+    position: absolute;
+    top 0;
+    transform: translate(-50%, 50%) scale(0.1);
+    text-align: center;
+    padding: 10 10px 10px;
+    color: black;
+    visibility: hidden;
+    transition: transform 0.4s, bottom 04.s;
+}
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, 50%) scale(1);
+}
+
+.popup h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: white;
+    color: black;
+    border: 0;
+    outline: none;
+    font-size: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
