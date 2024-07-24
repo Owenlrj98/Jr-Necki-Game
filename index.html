@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="snake.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="sun">
         <i class="material-icons" style="font-size:60px;color: white;text-shadow:0px 0px 0px #000000;">cloud</i>
-
     </div>
-
     <div class="cloud">
         <i class="material-icons" style="font-size:100px;color: white;text-shadow:0px 0px 0px #000000;">cloud</i>
         <i class="material-icons" style="font-size:70px;color: white;text-shadow:0px 0px 0px #000000;">cloud</i>
@@ -44,15 +45,13 @@
         <p>3. Do not touch the walls</p>
         <p>4. Do not eat yourself</p>
         <button type="button" class="closeButton" onclick="closePopup()">EXIT</button>
-        </div>
-    </div>
+    </div>   
     <div id="gameOverDialog" class="dialog hidden">
         <div class="dialog-content">
-            <h1>Game Over</h1>
-            <p id="finalScoreMessage">You scored <span id="finalScore">0</span> points!</p>
+            <h2>Game Over</h2>
+            <p>Your final score: <span id="finalScore">0</span></p>
             <button id="restartButton">Restart Game</button>
-            <button id="exitButton">Exit</button>
         </div>
-    </div>
+
     </body>
 </html>

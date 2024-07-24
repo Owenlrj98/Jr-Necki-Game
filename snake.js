@@ -12,6 +12,8 @@ const highScoreEl = document.querySelector('.highScore');
 console.log(highScoreEl);
 const menuEl = document.querySelector('.menu');
 console.log(menuEl);
+const restartButtonEl = document.querySelector("#restartButton");
+console.log(restartButton);
 // Important note to have querySelectors at the start of code -> affects the code
 /*---------------------------- Variables (state) ----------------------------*/
 let gameEnd = false;
@@ -57,7 +59,7 @@ function initialFood() {
     foodEl.style.gridArea = `${foodPosition.y} / ${foodPosition.x}`; // Set the food's position
     gameAreaEl.append(foodEl);
 }
-// create food
+// create starting food
 
 // Initialize Snake
 function initialSnake() {
@@ -79,13 +81,22 @@ function createFood() {
     foodPosition.x = Math.floor(Math.random() * 20) + 1;
     foodPosition.y = Math.floor(Math.random() * 20) + 1;
 };
+
 // Game Over
+function showGameOverDialog() {
+    const dialog = document.getElementById('gameOverDialog');
+    const finalScoreElement = document.getElementById('finalScore');
+    finalScoreElement.textContent = score;
+    dialog.style.display = 'block';
+}
+function restartGame() {
+    location.reload();
+}
 function gameOver() {
     clearInterval(gameTime);
-    alert("You died!"); // use dialogue
-    location.reload(); // Reload the page
+    showGameOverDialog();
+    // location.reload(); // Reload the page
 }
-
 
 // Change Direction
 function changeDirection(event) {
@@ -170,10 +181,11 @@ function init() {
     // Render the game
     renderGame();
 }
-// /*----------------------------- Event Listeners -----------------------------*/
+/*----------------------------- Event Listeners -----------------------------*/
 document.addEventListener("keydown", changeDirection); // Listen for keydown events for direction changes
 arrowKeysEl.forEach(button => button.addEventListener("click", (event) => changeDirection(event)));
-// Styling
+restartButtonEl.addEventListener("click", restartGame); //restart game when restart button is clicked
+/*----------------------------- Style -----------------------------*/
 // Create game menu 
 let popup = document.getElementById("popup");
 function openPopup() {
@@ -183,24 +195,8 @@ function closePopup() {
     popup.classList.remove("open-popup")
 }
 
-// Dialog
-// const dialog = document.querySelector("dialog");
-// const showButton = document.querySelector("dialog + button");
-// const closeButton = document.querySelector("dialog button");
-// showButton.addEventListener("click", () => {
-//     dialog.showModal();
-// });
-
 // Start Game
 createFood();
 gameTime = setInterval(init, 100); // Set the game update interval
 
 
-// current issues: 
-// food might appear on snake body
-// snake teleports sometimes
-// change the alert style
-// add comments to all - easy to get lost again with code
-// sometimes snake stop beside food
-// sometimes the snake die before hitting border
-// console.log querySelectors suddenly not working
