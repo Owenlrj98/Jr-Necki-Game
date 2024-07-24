@@ -17,8 +17,8 @@ body {
 }
 
 .gameBoard {
-    width: 75vmin;
-    height: 75vmin;
+    width: 60vmin;
+    height: 60vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,15 +115,12 @@ body {
     border-radius: 20%;
     font-weight: 500;
     font-size: 15px;
-
 }
 .closeButton {
     background: red;
     font-size: 20px;
     font-weight: 500;
-
 }
-
 .popup {
     width: 400px;
     background: orange;
@@ -161,4 +158,42 @@ body {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.dialog-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cloud {
+    display: inline;
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.material-icons {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
