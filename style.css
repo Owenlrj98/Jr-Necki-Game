@@ -25,11 +25,10 @@ h1 {
 }
 .gameBoard {
     width: 60vmin;
-    height: 60vmin;
+    height: 65vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 5px;
     background: darkgreen;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -38,7 +37,7 @@ h1 {
     display: flex;
     color: rgb(228, 220, 215);
     font-weight: 500;
-    font-size: 20 px;
+    font-size: 20px;
     justify-content: space-between;
     padding: 20px 25px;
 }
@@ -49,16 +48,20 @@ h1 {
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
     background: greenyellow;
     border-style: solid;
-    
 }
 .gameArea .food {
-    background: red;
-    border-radius: 50%;
-
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block; 
+    width: 24px; 
+    height: 24px; 
+    text-align: center; 
+    vertical-align: middle;
 }
 .gameArea .snake {
     background: darkgreen;
     border-radius: 20%;
+    border-style: dashed;
 }
 .arrowKeys {
     display: none;
@@ -74,8 +77,8 @@ h1 {
 }
 @media screen and (max-width: 800px) {
     .gameBoard {
-        width: 90vmin;
-        height: 115vmin;
+        width: 100vmin;
+        height: 100vmin;
     }
     .information {
         font-size: 15px;
@@ -125,6 +128,8 @@ h1 {
     font-family: "Ga Maamli", sans-serif;
     font-weight: 400;
     font-style: normal;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
 }
 .closeButton {
     background: red;
@@ -174,9 +179,6 @@ h1 {
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
-.closeButton {
-    
-}
 
 .cloud {
     display: inline;
@@ -192,8 +194,6 @@ h1 {
     padding-bottom: 0px;
 }
 .necki {
-    position: relative;
-    background-image: https://imgur.com/1RtC05A;
 }
 
 .dialog {

@@ -47,3 +47,5 @@ Other details:
 References:
 Glowing sun
 https://www.youtube.com/watch?v=R9CGeKYMiV0
+Jr Necki
+https://bbb.hidden-street.net/sites/bbb.hidden-street.net/files/sites/global.hidden-street.net/files/monsters/monsters017.gif

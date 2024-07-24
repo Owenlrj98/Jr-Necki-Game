@@ -1,6 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-
-
 /*------------------------ Cached Element References ------------------------*/
 const gameAreaEl = document.querySelector(".gameArea");
 console.log(gameAreaEl);
@@ -58,6 +56,9 @@ function initialFood() {
     foodEl.classList.add("food");
     foodEl.style.gridArea = `${foodPosition.y} / ${foodPosition.x}`; // Set the food's position
     gameAreaEl.append(foodEl);
+    foodEl.innerHTML = '';
+    foodEl.textContent = '\u{1F356}';
+    gameAreaEl.append(foodEl);
 }
 // create starting food
 
@@ -80,7 +81,7 @@ function initialSnake() {
 function createFood() {
     foodPosition.x = Math.floor(Math.random() * 20) + 1;
     foodPosition.y = Math.floor(Math.random() * 20) + 1;
-};
+    };
 
 // Game Over
 function showGameOverDialog() {
@@ -92,6 +93,7 @@ function showGameOverDialog() {
 function restartGame() {
     location.reload();
 }
+// restart button
 function gameOver() {
     clearInterval(gameTime);
     showGameOverDialog();
