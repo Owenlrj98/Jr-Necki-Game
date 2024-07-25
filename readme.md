@@ -1,51 +1,59 @@
-Idea Plan
-Const:
-Snake Starting Position
+Project Aim:
+To create a snake game with HTML, CSS and Javascript. 
 
-Variables:
-Food Position
-Controls
-Collision true/false
-Snake length
-Speed
+Description:
+The retro snake game involves the player/user controlling a snake to eat "food" that will allow them to gain points while avoiding collision with the walls and itself.
 
-Concept:
-Retro snake game involving the player/user controlling a snake to eat "food" that will allow them to gain points.
+Project Plan:
+
+WireFrameWork:
+1. Player will see the game area upon entering the browser.
+2. There is a game menu that shows instructions.
+3. Snake and food will be in their starting positions.
+4. There will be a scoreboard at the top of the gamearea.
+5. Dialogue box will appear when game ends.
+6. There will be a restart button if player wants to play again.
+
+Game Start:
+1. The snake will be constantly moving until losing condition.
+Goals:
+1. To eat as many food as possible to get higher score.
+Losing Condition:
+1. When the snake hits the border of the game board.
+2. When the snake hits itself.
 Controls:
-1. The snake will be constantly running until losing condition.
-2. Arrow Keys will allow the user to change the snake's direction.
+1. Arrow keys to change direction.
+2. Remove the possibility to press opposite key of the immediate direction that snake is moving.
+Score Board:
+1. Records current and final score.
+Playing area:
+1. Grid area of 20 rows x 20 columns.
+2. Menu button below area.
+Game Over:
+1. Displays dialogue box.
 
-Goals and losing conditions:
-1. To eat as many food as possible to get higher score. Eg. one food = 10points
-2. Losing Condition - When the snake hits the border of the game board or collision with self body = Game Over.
+Difficult Parts:
+1. Making the snake move.
+2. Making the snake not move in the immediate opposite direction.
+3. Making snake and food show up.
+4. Increasing snake's body length.
+5. Retrieving high score.
+6. Food sometimes appear within snake's body.
 
-Playing area and sizes:
-1. Gameboard size = 500 x 500 width x height 
-2. Snake initial size = 25 x 25 - Length +25 every food eaten.
-3. Score board above the playing area
-
-Possible Modifications in the future:
-1. Obstacles? Speed Up? (To be decided after game is done)
-
-Visuals
-1. Snake will be made of square blocks 
-2. Food will be circular locks
-
-Other details:
-1. Food needs to be spawned randomly, and not within the snake's body
-2. Make a pause button eg. ESC
-3. Restart Button after game over
-4. Show high score after each game.
-
-
-
-
-
-
-
+Future Considerations:
+1. Add more play areas of different grid sizes.
+2. Add obstacles
+3. Invert arrow keys
 
 References:
 Glowing sun
 https://www.youtube.com/watch?v=R9CGeKYMiV0
-Jr Necki
+
+Jr Necki Image
 https://bbb.hidden-street.net/sites/bbb.hidden-street.net/files/sites/global.hidden-street.net/files/monsters/monsters017.gif
+
+Cloud
+https://www.w3schools.com/icons/default.asp
+
+Audio
+https://mixkit.co/free-sound-effects/

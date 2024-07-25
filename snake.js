@@ -57,7 +57,7 @@ function initialFood() {
     foodEl.style.gridArea = `${foodPosition.y} / ${foodPosition.x}`; // Set the food's position
     gameAreaEl.append(foodEl);
     foodEl.innerHTML = '';
-    foodEl.textContent = '\u{1F356}';
+    foodEl.textContent = '\u{1F356}'; // meat emoji
     gameAreaEl.append(foodEl);
 }
 // create starting food
@@ -76,6 +76,7 @@ function initialSnake() {
     headEl.style.gridArea = `${snakePosition.y} / ${snakePosition.x}`;
     gameAreaEl.append(headEl);
 }
+// create starting snake
 
 // Create New Food
 function createFood() {
@@ -170,7 +171,6 @@ function init() {
     // Check if hit wall
     if (snakePosition.x <= 0 || snakePosition.x > 20 || snakePosition.y <= 0 || snakePosition.y > 20) {
         gameEnd = true;
-
         this.sound = new Audio();
         this.sound.src = 'deathvoice.wav';
         this.sound.play();
@@ -196,8 +196,6 @@ function init() {
     // Render the game
     renderGame();
 }
-
-
 /*----------------------------- Event Listeners -----------------------------*/
 document.addEventListener("keydown", changeDirection); // Listen for keydown events for direction changes
 arrowKeysEl.forEach(button => button.addEventListener("click", (event) => changeDirection(event)));
@@ -211,7 +209,6 @@ function openPopup() {
 function closePopup() {
     popup.classList.remove("open-popup")
 }
-
 // Start Game
 createFood();
 gameTime = setInterval(init, 100); // Set the game update interval
