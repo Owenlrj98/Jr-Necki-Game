@@ -239,3 +239,45 @@ h1 {
     font-weight: 400;
     font-style: normal;
 }
+#tree1 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: green;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transform: rotate(315deg);
+    top: 300px;
+    right: 0;
+}
+#tree1::before {
+    content: "";
+    position: absolute;
+    top: 85px;
+    width: 10px;
+    height: 100px;
+    background: #3c2703;
+    transform: rotate(45deg);
+    left: -20px;
+}
+#tree2 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: green;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transform: rotate(315deg);
+    top: 300px;
+    left: 0;
+}
+#tree2::before {
+    content: "";
+    position: absolute;
+    top: 85px;
+    width: 10px;
+    height: 100px;
+    background: #3c2703;
+    transform: rotate(45deg);
+    left: -20px;
+}

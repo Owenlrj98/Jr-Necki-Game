@@ -151,6 +151,10 @@ function init() {
         scoreEl.innerText = `Score: ${score}`;
         highScoreEl.innerText = `High Score: ${highScore}`;
         // update score
+        this.sound = new Audio();
+        this.sound.src = 'eatsound.wav';
+        this.sound.play();
+        // audio for eat food
     }
 
     // Move the snake's body
@@ -166,6 +170,11 @@ function init() {
     // Check if hit wall
     if (snakePosition.x <= 0 || snakePosition.x > 20 || snakePosition.y <= 0 || snakePosition.y > 20) {
         gameEnd = true;
+
+        this.sound = new Audio();
+        this.sound.src = 'deathvoice.wav';
+        this.sound.play();
+        // audio for hit wall
     }
     // returns game end when snake's x or y goes beyond boundary (which is 20 x 20 grid)
 
@@ -178,11 +187,17 @@ function init() {
     // snakebody[i][1] = find y coordinate of segement i   
     // refer back 147
     gameEnd = true;
+    this.sound = new Audio();
+    this.sound.src = 'eatself.wav';
+    this.sound.play();
+    // audio for self-collision
         }
     }
     // Render the game
     renderGame();
 }
+
+
 /*----------------------------- Event Listeners -----------------------------*/
 document.addEventListener("keydown", changeDirection); // Listen for keydown events for direction changes
 arrowKeysEl.forEach(button => button.addEventListener("click", (event) => changeDirection(event)));
