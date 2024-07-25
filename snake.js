@@ -125,6 +125,7 @@ function changeDirection(event) {
     // if arrow right pressed && snake not facing left (xMS = -1)
     // snake will turn right
     }
+    init(); // changes gamespeed by alot -> removed the bug of simultaneous keys leading to death
 }
 
 // Initialize Game
@@ -212,5 +213,3 @@ function closePopup() {
 // Start Game
 createFood();
 gameTime = setInterval(init, 100); // Set the game update interval
-
-
