@@ -75,7 +75,7 @@ h1 {
     cursor: pointer;
     border-right: 1px solid black;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-height: 800px) {
     .gameBoard {
         width: 100vmin;
         height: 100vmin;
@@ -103,8 +103,8 @@ h1 {
     position: relative;
     left: 300px;
     top: 0px;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     background: rgb(255, 200, 0);
     border-radius: 50%;
     animation: shine 4s ease-in-out infinite;
