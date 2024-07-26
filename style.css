@@ -103,8 +103,8 @@ h1 {
     position: relative;
     left: 300px;
     top: 0px;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     background: rgb(255, 200, 0);
     border-radius: 50%;
     animation: shine 4s ease-in-out infinite;
